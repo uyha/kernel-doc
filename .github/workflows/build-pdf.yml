@@ -4,11 +4,11 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          git clone \
-            --depth 1 \
-            --branch v6.1.9 \
-            git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
-
+      - run: git clone --depth 1 --branch v6.1.9 git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+      - run: cd linux
+      - run: sudo apt-get install dvipng fonts-noto-cjk latexmk librsvg2-bin texlive-lang-chinese texlive-xetex
+      - run: python3 -m venv sphinx_2.4.4
+      - run: . sphinx_2.4.4/bin/activate
+      - run: pip install -r ./Documentation/sphinx/requirements.txt
       - run: make pdfdocs
 
