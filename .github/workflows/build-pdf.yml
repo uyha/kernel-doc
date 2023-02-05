@@ -1,0 +1,14 @@
+name: Generate Linux kernel documention in pdf format
+on: push
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    stepps:
+      - run: |
+          git clone \
+            --depth 1
+            --branch v.6.1.9 \
+            git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+
+      - run: make pdfdocs
+
