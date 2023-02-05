@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: |
           git clone \
-            --depth 1
+            --depth 1 \
             --branch v.6.1.9 \
             git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
 
