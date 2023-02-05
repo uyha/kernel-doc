@@ -3,7 +3,7 @@ on: push
 jobs:
   generate:
     runs-on: ubuntu-latest
-    stepps:
+    steps:
       - run: |
           git clone \
             --depth 1
